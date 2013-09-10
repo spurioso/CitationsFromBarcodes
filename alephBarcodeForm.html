@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+        <title>Barcode Form</title>
+        <script type ="text/javascript"  src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+        </script>
+        <script type ="text/javascript">        
+            //<![CDATA[
+            //google.load("jquery", "1");
+            $(document).ready(init);
+            
+            function init() {
+                $("#txtInput").val("");
+                $("#output").html("Ready");
+                $("#txtInput").focus();
+                $("#aleph").submit(alephFind);
+                $("#style").val("turabian");                
+            }
+                            
+            function alephFind() {
+                var barcode = $("#txtInput").val();
+                var style = $("#style").val();                
+                $.get ("alephFind.php", { "barcode" : barcode, "style" : style }, processResult);
+                return false;                         
+            }
+            
+            function processResult(answer) {
+                $("#output").html(answer);
+            }            
+                   
+            //]]>
+        </script>
+    </head>
+
+    <body>
+        <form action="" id="aleph">
+            <fieldset>
+                <label>Insert barcode: </label>
+                <input type="text" id="txtInput" onclick="select()" />                      
+                <select id="style">
+                    <option value="turabian">Turabian</option>
+                    <option value="apa"> APA</option>
+                    <option value="chicago">Chicago</option>
+                    <option value="harvard">Harvard</option>
+                    <option value="mla">MLA</option>                    
+                    <option value="all">All</option>
+                </select>
+                <input type="submit"
+                       value="submit" />                                               
+                <input type="button"
+                       value="clear"
+                       onclick="init()" />
+              
+                <!--"apa", "chicago", "harvard", "mla", "turabian", "all"); -->
+                       <!--onclick="init()" /> <br> -->
+             </fieldset>
+                
+            
+        </form>        
+<br />
+<div id="output">
+</div>
+    </body>
+</html>
+
