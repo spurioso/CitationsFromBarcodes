@@ -1,13 +1,14 @@
 <?php
 
-$SETTINGS = 'settings.ini';
+// old version using settings.ini. Commenting out to test for sure whether it works without this file.
+/* $SETTINGS = 'settings.ini';
 
 function readSettingsFile($file='settings.ini') {
     return parse_ini_file($file);
 
 }
 
-$values = readSettingsFile();
+$values = readSettingsFile(); */
 
 
 
@@ -57,7 +58,7 @@ foreach ($alephPresentXML->record->metadata->oai_marc->varfield as $varfield) { 
 } // end foreach
 $permalink = "http://umaryland.worldcat.org/oclc/".$oclcNumber; //build a permalink pointing to WCL out of the OCLC number
 
-$worldCatKey = $values['worldcatKey'];
+$worldCatKey = getenv('HTTP_WORLDCAT_BASIC_KEY');
 
 
 $citationStyles = array("apa", "chicago", "harvard", "mla", "turabian", "all");
