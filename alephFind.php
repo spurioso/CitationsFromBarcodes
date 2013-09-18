@@ -88,13 +88,14 @@ echo "<strong>OCLC Number: </strong>".$oclcNumber."<br />";
 echo "<strong>ISBN: </strong>".$isbn."<br />";
 echo "<strong>Barcode: </strong>".$barcode."<br />";
 echo "<a href=\"".$alephURL."\" target=\"_blank\">".$alephURL."</a><br /><br />";
-echo "<a href=\"".$permalink."\" target=\"_blank\">".$permalink."</a><br />"; //print out the WCL permalink
-echo "</br>";
 
 //print out the citation, stripping all HTML tags but <em> and <i>, necessary for CSS formatting on AlephBarcodeForm.html
 echo strip_tags($citation, "<em><i>");
+echo "</br>";
 
-echo "</br></br>";
+//print out the WCL permalink
+echo "<a href=\"".$permalink."\" target=\"_blank\">".$permalink."</a><br />"; 
+echo "</br>";
 
 foreach ($collegeParkLocations as $location) {  //print out holding info for each College Park item
 echo $location["sublibrary"]."<br />";
