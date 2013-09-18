@@ -1,6 +1,6 @@
 # Citations From Barcodes
 
-This script retrieve some useful library information given a library-supplied barcode.  
+This script retrieves some useful library information given a library-supplied barcode.  
 As of now it works with the University of Maryland-College Park's Aleph ILS. 
 
 [Working version of this application](http://citations.aws.af.cm/alephBarcodeForm.html)  
