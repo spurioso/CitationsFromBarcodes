@@ -1,7 +1,13 @@
 # Citations From Barcodes
 
-This script retrieve some useful library information given a library-supplied barcode.  
-As of now it works with the University of Maryland-College Park's Aleph ILS.  
+This script retrieves some useful library information given a library-supplied barcode.  
+As of now it works with the University of Maryland-College Park's Aleph ILS. 
+
+[Working version of this application](http://citations.aws.af.cm/alephBarcodeForm.html)  
+Here are some barcodes you can try:  
+* ```31430057638498```
+* ```31430049609649```
+* ```31430045584994```
 
 The formatted citations are generated using the Worldcat Basic API.  
 You'll need a Worldcat Basic API Key.  
