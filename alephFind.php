@@ -99,7 +99,22 @@ echo "</br>";
 
 foreach ($collegeParkLocations as $location) {  //print out holding info for each College Park item
 echo $location["sublibrary"]."<br />";
-echo $location["collection"]."<br />";
+
+if ($location["collection"] == "RDREF") {
+	echo "Paged Collections Room, Ask at Circulation Desk";
+	} elseif ($location["collection"] == "REF") {
+		echo "Reference";	
+	} elseif ($location["collection"] == "STACK") {
+		echo "Stacks";
+	} elseif ($location["collection"] == "FOLIO") {
+		echo "Folio";
+	} elseif ($location["collection"] == "MINI") {
+		echo "Miniature Scores";
+	} else { 
+		echo $location["collection"];		
+} // end if
+echo "</br>";
+//echo $location["collection"]."<br />";
 echo $location["callNumber"]."<br /><br />";
 } //end foreach
 ?>
