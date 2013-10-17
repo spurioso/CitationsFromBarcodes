@@ -45,8 +45,10 @@
                 <label>Barcode or (soon) OCLC Number: </label>
                 <input type="text" id="txtInput" onclick="select()" /> 
                 <select id="index">
-                	<option value="barcode">Barcode</option>
-                	<!--<option value="oclc">OCLC Number</option>-->
+                	<!-- use AlephXobject codes for values, i.e., oclc for OCLC number, etc. See
+                		alephXobjects.php $alephcodes for possibilities-->
+                	<option value="barcode">Barcode</option> 
+                	<option value="oclc">OCLC Number</option>
                 </select>
             </fieldset>
             <fieldset>              
