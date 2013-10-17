@@ -244,44 +244,5 @@ class AlephX {
 	
 } // end AlephX object
 
-$book1 = new AlephX("31430045584994", "barcode");
-$book2 = new AlephX("004320251", "aleph");
-$book3 = new AlephX("MCD28", "callnum");
-
-// oclcnums for testing. one is 7 digits. I think one of the others requires "ocn" prefix, others require "ocm" prefix
-$oclcNums = array ("2648489", "173136007", "428436794", "34919814");
-
-$book4 = new AlephX($oclcNums[3], "oclc");
-$book5 = new AlephX("9780596100674", "isbn");
-$book6 = new AlephX("0226103897", "isbn");
-
-$books = array($book1, $book2, $book3, $book4, $book5, $book6);
-
-/*
-foreach ($books as $book) {
-	echo $book->getAlephURL();
-	echo "</br>";
-}
-*/
-
-
-print_r($book6->getISBNsAll());
-echo "</br>";
-
-print_r($book5->getISBNsAll());
-echo "</br>";
-
-print_r($book4->getISBNsAll());
-echo "</br>";
-echo "</br>";
-
-echo $book6->getISBNjustOne();
-echo "</br>";
-echo $book5->getISBNjustOne();
-echo "</br>";
-echo $book4->getISBNjustOne();
-echo "</br>";
-echo $book4->getWorldcatLink();
-echo "</br>";
 
 ?>
