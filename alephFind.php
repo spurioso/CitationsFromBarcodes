@@ -1,19 +1,9 @@
 <?php
-
-// old version using settings.ini. Commenting out to test for sure whether it works without this file.
-/* $SETTINGS = 'settings.ini';
-
-function readSettingsFile($file='settings.ini') {
-    return parse_ini_file($file);
-
-}
-
-$values = readSettingsFile(); */
-
-
-
 //$barcodes = array ("31430054272036","31430054447695","31430055485397","31430055203543","31430030940326", "31430049752605", "31430052399393", "31430052399393", "31430056673173", "31430042466138","31430006677696","31430007712559","31430006129102","31430053093094","31430039849874","31430054128535"); //barcodes for testing
 //$barcode = $barcodes[6];
+
+require "alephXobjects.php";
+
 $query = $_REQUEST["query"]; //get barcode from alephBarcodeForm.html form
 $index = $_REQUEST["index"];
 $style = $_REQUEST["style"];
@@ -21,6 +11,8 @@ $style = $_REQUEST["style"];
 if ($index = "barcode") {
 	$barcode = $query;
 }
+
+
 
 $op = "find";
 $code = "bar";
