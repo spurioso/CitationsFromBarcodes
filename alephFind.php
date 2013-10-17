@@ -8,12 +8,16 @@ $query = $_REQUEST["query"]; //get barcode from alephBarcodeForm.html form
 $index = $_REQUEST["index"];
 $style = $_REQUEST["style"];
 
-if ($index = "barcode") {
-	$barcode = $query;
-}
+echo "Index: ".$index."</br>";
 
+$item = new AlephX($query, $index);
 
+$oclcNumber = $item->getOCLCnum();
+$docNumber = $item->getAlephNum();
+$isbn = $item->getISBNjustOne();
+$alephURL = $item->getAlephURL();
 
+/*
 $op = "find";
 $code = "bar";
 $base = "CP";
@@ -52,7 +56,9 @@ foreach ($alephPresentXML->record->metadata->oai_marc->varfield as $varfield) { 
     if ($varfield->attributes()->id == "020") {
     $isbn = $varfield->subfield;
     } // end if
-} // end foreach
+} // end foreach  
+ */
+ 
 $permalink = "http://umaryland.worldcat.org/oclc/".$oclcNumber; //build a permalink pointing to WCL out of the OCLC number
 
 $worldCatKey = getenv('HTTP_WORLDCAT_BASIC_KEY');
