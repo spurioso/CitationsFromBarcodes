@@ -24,9 +24,10 @@
             }
                             
             function alephFind() {
-                var barcode = $("#txtInput").val();
-                var style = $("#style").val();                
-                $.get ("alephFind.php", { "barcode" : barcode, "style" : style }, processResult);
+                var query = $("#txtInput").val();
+                var index = $("#index").val(); 
+                var style = $("#style").val();                               
+                $.get ("alephFind.php", { "query" : query, "index" : index, "style" : style }, processResult);
                 return false;                         
             }
             
@@ -41,11 +42,11 @@
     <body>
         <form action="" id="aleph">
             <fieldset>
-                <label>Barcode or OCLC Number: </label>
+                <label>Barcode or (soon) OCLC Number: </label>
                 <input type="text" id="txtInput" onclick="select()" /> 
                 <select id="index">
                 	<option value="barcode">Barcode</option>
-                	<option value="oclc">OCLC Number</option>
+                	<!--<option value="oclc">OCLC Number</option>-->
                 </select>
             </fieldset>
             <fieldset>              
