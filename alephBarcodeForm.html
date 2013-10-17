@@ -19,7 +19,8 @@
                 $("#output").html("Ready");
                 $("#txtInput").focus();
                 $("#aleph").submit(alephFind);
-                $("#style").val("turabian");                
+                $("#index").val("barcode");
+                $("#style").val("turabian");                 
             }
                             
             function alephFind() {
@@ -40,8 +41,15 @@
     <body>
         <form action="" id="aleph">
             <fieldset>
-                <label>Insert barcode: </label>
-                <input type="text" id="txtInput" onclick="select()" />                      
+                <label>Barcode or OCLC Number: </label>
+                <input type="text" id="txtInput" onclick="select()" /> 
+                <select id="index">
+                	<option value="barcode">Barcode</option>
+                	<option value="oclc">OCLC Number</option>
+                </select>
+            </fieldset>
+            <fieldset>              
+                <label>Citation Style: </label>
                 <select id="style">
                     <option value="turabian">Turabian</option>
                     <option value="apa"> APA</option>
@@ -50,6 +58,8 @@
                     <option value="mla">MLA</option>                    
                     <option value="all">All</option>
                 </select>
+            </fieldset>
+            <fieldset>
                 <input type="submit"
                        value="submit" />                                               
                 <input type="button"
