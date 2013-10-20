@@ -16,7 +16,7 @@ $oclcNumber = $item->getOCLCnum();
 $docNumber = $item->getAlephNum();
 $isbn = $item->getISBNjustOne();
 $alephURL = $item->getAlephURL();
-
+$barcode = $item->getBarcode();
 /*
 $op = "find";
 $code = "bar";

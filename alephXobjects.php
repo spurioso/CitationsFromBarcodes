@@ -209,6 +209,12 @@ class AlephX {
 		} // end if	
 	} // end getISBNjustOne
 	
+	// Retrieve Aleph item data URL
+	public function getItemDataURL() {
+		$itemDataURL = $this->itemDataURL;
+		return($itemDataURL);
+	} // end getItemDataURL	
+	
 	// Retrieves Aleph item data (call number, locations, etc)
 	public function getItemData() {
 		$itemData = $this->itemData;
@@ -240,9 +246,13 @@ class AlephX {
 		$permalink = "http://umaryland.worldcat.org/oclc/".$oclcnumber; //build a permalink pointing to WCL out of the OCLC number
 		return($permalink);
 	}
+
+	public function getBarcode() {
+		$barcode = $this->itemData->item->barcode;
+		return($barcode);
+	}
 	
 	
 } // end AlephX object
-
 
 ?>
