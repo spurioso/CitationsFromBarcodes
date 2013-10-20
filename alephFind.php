@@ -8,8 +8,6 @@ $query = $_REQUEST["query"]; //get barcode from alephBarcodeForm.html form
 $index = $_REQUEST["index"];
 $style = $_REQUEST["style"];
 
-echo "Index: ".$index."</br>";
-
 $item = new AlephX($query, $index);
 
 $oclcNumber = $item->getOCLCnum();

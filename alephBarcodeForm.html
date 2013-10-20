@@ -42,13 +42,14 @@
     <body>
         <form action="" id="aleph">
             <fieldset>
-                <label>Barcode or (soon) OCLC Number: </label>
+                <label>Barcode, OCLC Number, or Aleph Number: </label>
                 <input type="text" id="txtInput" onclick="select()" /> 
                 <select id="index">
                 	<!-- use AlephXobject codes for values, i.e., oclc for OCLC number, etc. See
                 		alephXobjects.php $alephcodes for possibilities-->
                 	<option value="barcode">Barcode</option> 
                 	<option value="oclc">OCLC Number</option>
+                	<option value="aleph">Aleph Number</option>
                 </select>
             </fieldset>
             <fieldset>              
