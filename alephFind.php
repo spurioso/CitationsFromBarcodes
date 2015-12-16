@@ -57,7 +57,9 @@ foreach ($alephPresentXML->record->metadata->oai_marc->varfield as $varfield) { 
 } // end foreach  
  */
  
-$permalink = "http://umaryland.worldcat.org/oclc/".$oclcNumber; //build a permalink pointing to WCL out of the OCLC number
+// $permalink = "http://umaryland.worldcat.org/oclc/".$oclcNumber; //build a permalink pointing to WCL out of the OCLC number
+$permalink = "https://umaryland.on.worldcat.org/oclc/".$oclcNumber."?databaseList=638"; //build a permalink pointing to WCL out of the OCLC number
+
 
 $worldCatKey = getenv('HTTP_WORLDCAT_BASIC_KEY');
 
