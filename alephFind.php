@@ -15,52 +15,8 @@ $docNumber = $item->getAlephNum();
 $isbn = $item->getISBNjustOne();
 $alephURL = $item->getAlephURL();
 $barcode = $item->getBarcode();
-/*
-$op = "find";
-$code = "bar";
-$base = "CP";
-$findURL = "http://catalog.umd.edu/X?request=".$query."&op=".$op."&code=".$code."&base=".$base; //url for Aleph x-services find request. Returns set number if successful    
-$findResults = file_get_contents($findURL); // get results of find request
-$alephFindXML = new SimpleXMLElement($findResults); //and turn the results into an XML object
-    if ($alephFindXML->set_number) {        //check for set number
-        $alephSetNumber = $alephFindXML->set_number; //if there is a set number, store it in a variable
-        //echo "Set Number: ".$alephSetNumber."<br />";        
-    } elseif ($alephFindXML->error) {        //error is returned if barcode not found
-        echo "Barcode not found <br />";
-        break;        
-    } else {
-        echo "Something went horribly wrong <br />"; //handles other unforseen errors        
-        break;                
-    }      //end if
-        
 
- 
-$presentURL = "http://catalog.umd.edu/X?set_no=".$alephSetNumber."&set_entry=1&op=present"; //present url gets the actual MARC XML file for the results set
-//echo "Present URL: ".$presentURL."<br />";
-$presentResults = file_get_contents($presentURL);
-$alephPresentXML = new SimpleXMLElement($presentResults);
-$docNumber = $alephPresentXML->record->doc_number;
-$alephURL = "http://catalog.umd.edu/docno=".$docNumber;
-//echo "Doc Number: ".$docNumber."<br />";
-//echo "Marc Fields: <br />";
-$oclcPattern = "/^oc[A-z][0-9]{6,9}$/"; //regular expression pattern for matching oclc numbers (other data can be stored in 035 MARC fields)
-foreach ($alephPresentXML->record->metadata->oai_marc->varfield as $varfield) { //go through each MARC variable field in the result
-    if ($varfield->attributes()->id == "035") { //Find the 035 fields. see http://www.electrictoolbox.com/php-simplexml-element-attributes/ for accessing element attributes
-        if (preg_match($oclcPattern, $varfield->subfield)) { //look for 035 fields that store OCLC numbers
-            $oclcNumber = preg_replace("/^oc[A-z]/", "", $varfield->subfield); //remove the "ocn" or "ocm" prefix and store the oclc number as a variable
-            //echo "OCLC Number: ".$oclcNumber."<br />";                    
-        } // end if       
-    } // end if
-    if ($varfield->attributes()->id == "020") {
-    $isbn = $varfield->subfield;
-    } // end if
-} // end foreach  
- */
- 
-// $permalink = "http://umaryland.worldcat.org/oclc/".$oclcNumber; //build a permalink pointing to WCL out of the OCLC number
 $permalink = "https://umaryland.on.worldcat.org/oclc/".$oclcNumber."?databaseList=638"; //build a permalink pointing to WCL out of the OCLC number
-
-
 $worldCatKey = getenv('HTTP_WORLDCAT_BASIC_KEY');
 
 
